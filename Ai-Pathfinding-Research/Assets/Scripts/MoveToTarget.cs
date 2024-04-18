@@ -13,7 +13,6 @@ public class MoveToTarget : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
         agent.SetDestination(target.position);
     }
 
@@ -24,5 +23,10 @@ public class MoveToTarget : MonoBehaviour
             agent.isStopped = true;
             timer.isTiming = false;
         }
+    }
+
+    private void OnDrawGizmosSelected()
+    {
+        Gizmos.color = gameObject.GetComponent<MeshRenderer>().material.color;
     }
 }
